@@ -28,6 +28,18 @@ public class UsersEntity {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
+    public UsersEntity(String username, String email, String password) {
+        System.out.println("88888888888888888888888888888888888888888888888888888888888888888888");
+        System.out.println("Iam entity class ");
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public UsersEntity() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -77,6 +89,18 @@ public class UsersEntity {
     }
 
     @Override
+    public String toString() {
+        return "UsersEntity{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -89,3 +113,4 @@ public class UsersEntity {
         return Objects.hash(id, username, email, password, createdAt, updatedAt);
     }
 }
+
